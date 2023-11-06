@@ -77,5 +77,4 @@ func main() {
 		log.Println("invalidWingedTriangle variable value: ", invalidWingedTriangle)
 		log.Fatal(err)
 	}
-	fmt.Println("<<============================>>")
 }
