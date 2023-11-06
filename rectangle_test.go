@@ -5,31 +5,49 @@ import (
 	"testing"
 )
 
-var newRectangle = shapes.NewRectangle(4.5, 6.5)
+var (
+	width  = 4.5
+	length = 6.5
+)
 
 func TestNewRectangle(t *testing.T) {
+	newRectangle := shapes.NewRectangle(width, length)
 	if newRectangle == nil {
-		t.Errorf("expected width of rectangle = %.2f and lenght of rectangle = %.2f , got nil", newRectangle.Width(), newRectangle.Length())
+		t.Error("expected new rectangle, got nil")
 	}
 }
+
 func TestWidth(t *testing.T) {
-	if newRectangle.Width() == 0 {
-		t.Error("expected width of the rectangle be a float number >= 0 , got zero")
+	newRectangle := shapes.NewRectangle(width, length)
+	if newRectangle.Width() != width {
+		t.Errorf("expected %0.2f, got %0.2f", width, newRectangle.Width())
 	}
 }
+
 func TestLength(t *testing.T) {
-	if newRectangle.Length() == 0 {
-		t.Error("expected length of the rectangle be a float number >= 0 , got zero")
+	newRectangle := shapes.NewRectangle(width, length)
+	if newRectangle.Length() != length {
+		t.Errorf("expected %0.2f, got %0.2f", length, newRectangle.Length())
 	}
 }
 func TestSetWidth(t *testing.T) {
-	if newRectangle.SetWidth(6.7) == nil {
-		t.Error("expected a new width of rectangle,got nil")
+	newRectangle := shapes.NewRectangle(width, length)
+	newWidth := 6.7
+	if newRectangle.SetWidth(newWidth) == nil {
+		t.Error("expected a new rectangle, got nil")
+	}
+	if newRectangle.Width() != newWidth {
+		t.Errorf("expected %0.2f, got %0.2f", newWidth, newRectangle.Width())
 	}
 }
 
 func TestSetLength(t *testing.T) {
-	if newRectangle.SetLength(7.7) == nil {
-		t.Error("expected a new length of rectangle,got nil")
+	newRectangle := shapes.NewRectangle(width, length)
+	newLength := 7.7
+	if newRectangle.SetLength(newLength) == nil {
+		t.Error("expected a new rectangle, got nil")
+	}
+	if newRectangle.Length() != newLength {
+		t.Errorf("expected %0.2f, got %0.2f", newLength, newRectangle.Length())
 	}
 }
