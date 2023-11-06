@@ -1,7 +1,7 @@
 package shapes_test
 
 import (
-	"playground/lesson2/shapes"
+	"playground"
 	"testing"
 )
 

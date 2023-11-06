@@ -1,12 +1,12 @@
 package shapes_test
 
 import (
-	"playground/lesson2/shapes"
+	shapes2 "playground"
 	"testing"
 )
 
 func TestNewWingedTriangle(t *testing.T) {
-	wingedtri, err := shapes.NewWingedTriangle([3]float64{3, 4, 5})
+	wingedtri, err := shapes2.NewWingedTriangle([3]float64{3, 4, 5})
 	if err != nil {
 		t.Errorf("expected nil error,got %s", err.Error())
 	}
@@ -24,12 +24,12 @@ func TestNewWingedTriangle(t *testing.T) {
 }
 
 func TestNewTriangleWithPoint(t *testing.T) {
-	points := [3]shapes.Point{
+	points := [3]shapes2.Point{
 		{1, 2, 3},
 		{4, 5, 8},
 		{3, 5, 9},
 	}
-	newTriangleWithPoints, err := shapes.NewTriangleWithPoints(points)
+	newTriangleWithPoints, err := shapes2.NewTriangleWithPoints(points)
 
 	if err != nil {
 		t.Errorf("expected nil error,got %s", err.Error())
@@ -37,7 +37,7 @@ func TestNewTriangleWithPoint(t *testing.T) {
 	if newTriangleWithPoints == nil {
 		t.Error("expected a newtriangle,but got nil !!??")
 	}
-	if !shapes.IsTriangle(points) {
+	if !shapes2.IsTriangle(points) {
 		t.Error("expect,points are equal and can not make a triangle,but got a triangle")
 	}
 }
