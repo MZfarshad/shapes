@@ -18,11 +18,11 @@ func (p Point) Is(p1 Point) bool {
 	if p.X == p1.X {
 		if p.Y == p1.Y {
 			if p.Z == p1.Z {
-				return false
+				return true
 			}
 		}
 	}
-	return true
+	return false
 }
 
 //type points struct {
@@ -48,4 +48,3 @@ func IsTriangle(points [3]Point) bool {
 	}
 	return false
 }
-
