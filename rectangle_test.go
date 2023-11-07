@@ -1,13 +1,13 @@
 package shapes_test
 
 import (
-	"playground"
+	shapes "playground"
 	"testing"
 )
 
 var (
 	width  = 4.5
-	length = 6.5
+	length = 6.9
 )
 
 func TestNewRectangle(t *testing.T) {
