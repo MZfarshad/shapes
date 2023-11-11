@@ -1,7 +1,7 @@
 package shapes_test
 
 import (
-	shapes "playground"
+	"github.com/mzfarshad/shapes"
 	"testing"
 )
 
